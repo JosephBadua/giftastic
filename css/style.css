@@ -1,0 +1,108 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    font-size: 20px;    
+}
+button {
+    font-size: 40px;
+}
+.title {
+    position: absolute;
+    top: 0px;
+    font-size: 10em;
+    height: 20%;
+    
+    width: 100%;
+    text-align: center;
+    background: skyblue;
+}
+.title::before{
+    content: url("../images/ezgif.com-resize.gif")
+}
+.title::after{
+    content: url("../images/ezgif.com-resize.gif")
+}
+.button-holder {
+    position: absolute;
+    top: 20%;
+    height: 30%;
+    width: 100%;
+    text-align: center;
+    background: red;
+}
+.gifs {
+    position: absolute;
+    top: 35%;
+    left: 0%;
+    height: 100%;
+    width: 80%;
+    background: lightgreen;
+    overflow: auto;
+}
+.favorite {
+    position: absolute;
+    top: 35%;
+    right: 0%;
+    height: 100%;
+    width: 20%;
+    background: purple;
+}
+.main-button {
+    z-index: 2;
+    width: 79.68%;
+    height: 100%;
+    float: left;
+    border: 1px solid black;
+}
+.button-input {
+    z-index: 2;
+    width: 20%;
+    height: 100%;
+    float: left;
+    border: 1px solid black;
+}
+.buttons {
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    text-align: left;
+}
+#search {
+    height: 10%;
+    width: 80%;
+}
+.number {
+    width: 20%;
+}
+.titlegifs {
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: pink;
+    border: 1px solid black;
+}
+.maingifbody{
+    width: 100%;
+    border: 1px solid black;
+}
+.favtext {
+    text-align: center;
+}
+.favbody {
+    border: 1px solid black;
+}
+#favoview {
+    position: absolute;
+    left: 25%;
+    height: 5%;
+    width: 50%;
+}
+img {
+    width: 30%;
+}
+p {
+
+}
