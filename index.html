@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../giftastic/css/style.css">
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="../giftastic/javascript/java.js"></script>
@@ -15,23 +17,35 @@
 </div>
 <div class="button-holder">
     <div class="main-button">
-        <h1>Your Searches</h1>
+        <h1 id="titlename2">Your Searches &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace; How many results?</h1>
+        <div class="form-group">
+                <select class="form-control" id="numRecords">
+                      <option>1</option> 
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
+                      <option>7</option>
+                      <option>8</option>
+                      <option>9</option>
+                      <option>10</option>
+                    </select>
+                </div>
         <div class="buttons">
             <!--BUTTONS GO HERE-->
-            <button searchname="arnold schwarzenegger">
+            <button searchname="arnold schwarzenegger" class="searchbutton">
                 Boy
             </button>
         </div>
-    </div>
-    <div class="button-input">
-        <h1>Look Up New Images</h1>
+    </div>             
+</div>
+<div class="button-input">
+        <h1>Look Up Images</h1>
         <input type="text" for="search" id="search">
         <br>
-        How Many? &NonBreakingSpace; <input type="text" for="number" class="number">
-        <br>
-        <input type="submit" value="gimme dat">
-    </div>                
-</div>
+        <input type="submit" value="gimme dat" id="submit">
+    </div>   
 <div class="gifs">
     <div class="titlegifs">
         <h1>Your Results</h1>

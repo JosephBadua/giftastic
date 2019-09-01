@@ -10,10 +10,9 @@ button {
 }
 .title {
     position: absolute;
-    top: 0px;
+    top: -40px;
     font-size: 10em;
-    height: 20%;
-    
+    height: 50%;
     width: 100%;
     text-align: center;
     background: skyblue;
@@ -24,13 +23,17 @@ button {
 .title::after{
     content: url("../images/ezgif.com-resize.gif")
 }
+#titlename2::before {
+    content: url("../images/rsz_1rsz_down_burned.png");
+}
 .button-holder {
     position: absolute;
     top: 20%;
-    height: 30%;
-    width: 100%;
+    height: 15%;
+    width: 80%;
     text-align: center;
     background: red;
+    overflow: auto;
 }
 .gifs {
     position: absolute;
@@ -43,9 +46,9 @@ button {
 }
 .favorite {
     position: absolute;
-    top: 35%;
+    top: 40%;
     right: 0%;
-    height: 100%;
+    height: 95%;
     width: 20%;
     background: purple;
 }
@@ -54,24 +57,31 @@ button {
     width: 79.68%;
     height: 100%;
     float: left;
-    border: 1px solid black;
 }
 .button-input {
-    z-index: 2;
+    position: absolute;
+    top: 20%;
+    right: 0%;
     width: 20%;
     height: 100%;
     float: left;
-    border: 1px solid black;
+    text-align: center;
+    margin-left: 1.5%;
+    background: green;
 }
 .buttons {
     width: 100%;
     height: 100%;
-    border: 1px solid black;
     text-align: left;
+    overflow: auto;
 }
 #search {
-    height: 10%;
+    height: 5%;
     width: 80%;
+}
+.searchbutton {
+    float: left;
+    margin-left: 2%;
 }
 .number {
     width: 20%;
@@ -79,14 +89,13 @@ button {
 .titlegifs {
     text-align: center;
     position: sticky;
-    top: 0;
+    top: 0%;
     z-index: 5;
+    height: 5%;
     background: pink;
-    border: 1px solid black;
 }
 .maingifbody{
     width: 100%;
-    border: 1px solid black;
 }
 .favtext {
     text-align: center;
@@ -103,6 +112,21 @@ button {
 img {
     width: 30%;
 }
-p {
-
+#numRecords {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 30%;
+}
+#submit {
+    position: absolute;
+    left: 30%;
+    top: 13%;
+    width: 40%;
+}
+.form-group {
+    width: 40%;
+    position: absolute;
+    top: 3%;
+    left: 45%;
 }
