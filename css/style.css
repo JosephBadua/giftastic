@@ -120,7 +120,13 @@ img {
 }
 #submit {
     position: absolute;
-    left: 30%;
+    left: 10%;
+    top: 13%;
+    width: 30%;
+}
+#submit2 {
+    position: absolute;
+    left: 50%;
     top: 13%;
     width: 40%;
 }

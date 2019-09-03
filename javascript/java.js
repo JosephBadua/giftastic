@@ -12,7 +12,17 @@ returncount = $(".number");
 
 
 $(document).ready(function() {  
+    $("#submit2").on("click", function() {
+      buttonarr = [];
+      $(".buttons").empty();
+      console.log(buttonarr);
+      JSON.stringify(buttonarr);
+      console.log(buttonarr);
+      localStorage.setItem("buttons", buttonarr);
+    });
     $("#submit").on("click", function() {
+        var wholeDiv = $("<div>");
+        wholeDiv.attr("count", gifCount);
         var newbutton = $("<button>");
         var searchitem = $("#search").val().trim();
         if (searchitem == ""){
@@ -23,24 +33,29 @@ $(document).ready(function() {
         newbutton.attr("searchname", searchitem);
         newbutton.attr("class", "searchbutton");
         var cancelbutton = $("<button>");
-        cancelbutton.css("margin-left", "1%");
         cancelbutton.attr("remove", gifCount);
         cancelbutton.addClass("removal"); 
         cancelbutton.text("X");
         cancelbutton.css("color", "red");
+        wholeDiv.css("display", "inline");
         newbutton.append(cancelbutton);
         gifCount++;
-        $(".buttons").append(newbutton);
+        wholeDiv.append(newbutton);
+        $(".buttons").append(wholeDiv);
         buttonarr.push(searchitem);
         console.log(buttonarr);
         JSON.stringify(buttonarr);
         localStorage.setItem("buttons", buttonarr);
-        } else {
-          return;
-        }
-    });
+        } 
+    });   
     $(document).on('click', '.removal', function() {
-      //removal function
+      $(this).parent().hide();
+      var xButton = $(this).attr("remove");
+      buttonarr.splice(xButton);
+      $("#remove" + gifCount).remove();
+      JSON.stringify(buttonarr);
+      console.log(buttonarr);
+      localStorage.setItem("buttons", buttonarr);
     })
     $(document).on('click', '.searchbutton', function() {
       $(".maingifbody").empty();
