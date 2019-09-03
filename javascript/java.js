@@ -3,6 +3,7 @@ var queryURL = "";
 var returncount = "";
 var rightImage = false;
 var buttonarr = [];
+var gifCount = 0
 returncount = $(".number");
 /* if (returncount = NaN){
     alert("This is not a number")
@@ -18,16 +19,30 @@ $(document).ready(function() {
           return;
         } else if (buttonarr.indexOf(searchitem) == -1) {
         newbutton.text(searchitem);
+        newbutton.attr("id", "gif-" + gifCount);
         newbutton.attr("searchname", searchitem);
         newbutton.attr("class", "searchbutton");
+        var cancelbutton = $("<button>");
+        cancelbutton.css("margin-left", "1%");
+        cancelbutton.attr("remove", gifCount);
+        cancelbutton.addClass("removal"); 
+        cancelbutton.text("X");
+        cancelbutton.css("color", "red");
+        newbutton.append(cancelbutton);
+        gifCount++;
         $(".buttons").append(newbutton);
         buttonarr.push(searchitem);
         console.log(buttonarr);
+        JSON.stringify(buttonarr);
+        localStorage.setItem("buttons", buttonarr);
         } else {
           return;
         }
     });
-    $(document).on('click', '.searchbutton',   function() {
+    $(document).on('click', '.removal', function() {
+      //removal function
+    })
+    $(document).on('click', '.searchbutton', function() {
       $(".maingifbody").empty();
        search = $(this).attr("searchname");
        var random = Math.floor(Math.random() * 1000 + 1)
