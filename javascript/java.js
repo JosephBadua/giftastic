@@ -2,6 +2,7 @@ var search = "";
 var queryURL = "";
 var returncount = "";
 var rightImage = false;
+var buttonarr = [];
 returncount = $(".number");
 /* if (returncount = NaN){
     alert("This is not a number")
@@ -11,18 +12,27 @@ returncount = $(".number");
 
 $(document).ready(function() {  
     $("#submit").on("click", function() {
-      var newbutton = $("<button>");
-      var searchitem = $("#search").val().trim();
-      newbutton.text(searchitem);
-      newbutton.attr("searchname", searchitem);
-      newbutton.attr("class", "searchbutton");
-      $(".buttons").append(newbutton);
+        var newbutton = $("<button>");
+        var searchitem = $("#search").val().trim();
+        if (searchitem == ""){
+          return;
+        } else if (buttonarr.indexOf(searchitem) == -1) {
+        newbutton.text(searchitem);
+        newbutton.attr("searchname", searchitem);
+        newbutton.attr("class", "searchbutton");
+        $(".buttons").append(newbutton);
+        buttonarr.push(searchitem);
+        console.log(buttonarr);
+        } else {
+          return;
+        }
     });
-    $("button").on("click", function() {
+    $(document).on('click', '.searchbutton',   function() {
       $(".maingifbody").empty();
        search = $(this).attr("searchname");
        var random = Math.floor(Math.random() * 1000 + 1)
        var number = $("#numRecords").val().trim();
+       console.log(search);
        console.log(number)
        queryURL = "http://api.giphy.com/v1/gifs/search?q=" + search + "&offset=" + random + "&api_key=P8PaoNi48NLBISkpwyN45QzEEbrFkVdi&limit=" + number 
     
@@ -60,7 +70,6 @@ $(document).ready(function() {
               resultshow.prepend(gifrating);
               resultshow.prepend(personImage);
               resultshow.append(favorite);
-    
               $(".maingifbody").append(resultshow);
             }
             $(".favorito").click(function() {
@@ -79,5 +88,6 @@ $(document).ready(function() {
             })
           });
       });
+
 });
   
