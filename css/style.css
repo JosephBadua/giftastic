@@ -43,6 +43,7 @@ button {
     width: 80%;
     background: lightgreen;
     overflow: auto;
+    overflow-x: hidden;
 }
 .favorite {
     position: absolute;
@@ -70,7 +71,7 @@ button {
     background: green;
 }
 .buttons {
-    width: 125%;
+    width: 125.5%;
     height: 90%;
     text-align: left;
     overflow: auto;
@@ -96,6 +97,8 @@ button {
 }
 .maingifbody{
     width: 100%;
+    margin-left: 3%;
+    overflow-x: hidden;
 }
 .favtext {
     text-align: center;
@@ -105,9 +108,17 @@ button {
 }
 #favoview {
     position: absolute;
-    left: 25%;
+    left: 10%;
+    font-size: 16px;
     height: 5%;
-    width: 50%;
+    width: 30%;
+}
+#favoview2 {
+    position: absolute;
+    left: 50%;
+    font-size: 16px;
+    height: 5%;
+    width: 40%;
 }
 img {
     width: 30%;
