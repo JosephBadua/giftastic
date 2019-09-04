@@ -3,6 +3,7 @@ var queryURL = "";
 var returncount = "";
 var rightImage = false;
 var buttonarr = [];
+var favorites = [];
 var gifCount = 0
 returncount = $(".number");
 /* if (returncount = NaN){
@@ -76,16 +77,14 @@ $(document).ready(function() {
     
             for (var i = 0; i < results.length; i++) {
               var resultshow = $("<div>");
-    
-              var rating = results[i].rating;
-              rating = rating.toUpperCase();
-    
-    
+              var rating = results[i].rating;    
               var gifrating = $("<p>").text("Rating: " + rating);
               var favorite = $("<button>").text("Add to Favorites");
               favorite.attr("class", "favorito");
+              favorite.attr("title", results[i].title);
               var personImage = $("<img>");
               personImage.attr("class", "picture");
+              favorite.attr("entire-data", results[i].id)
               personImage.attr("src", results[i].images.original_still.url);
               personImage.attr("running", results[i].images.original.url);
               personImage.attr("stop", results[i].images.original_still.url);
@@ -103,7 +102,14 @@ $(document).ready(function() {
               $(".maingifbody").append(resultshow);
             }
             $(".favorito").click(function() {
-              alert("Hello");
+              var favoriteGif = $("<button>");
+              favoriteGif.css("font-size", "16px")
+              favoriteGif.css("text-align", "center")
+              favoriteGif.css("width", "100%")
+              favoriteGif.text($(this).attr("title"));
+              favorites.push($(this).attr("entire-data"));
+              console.log(favorites)
+              $(".favbody").append(favoriteGif);
             });
             $("img").click(function() {
               if (rightImage) {
