@@ -14,28 +14,34 @@ returncount = $(".number");
 
 
 $(document).ready(function() { 
-  var storedButtons = JSON.stringify(localStorage.getItem("buttons"));
+  var storedButtons = (localStorage.getItem("buttons"));
   console.log(storedButtons);
-  buttonarr = storedButtons.split(',');
-  for (var i = 0; i < buttonarr.length; i++) {
-    gifCount++;
-    var pastDiv = $("<div>");
-    var pastButton = $("<button>")
-    pastButton.text(buttonarr[i]);
-    pastButton.attr("id", "gif-" + gifCount);
-    pastButton.attr("searchname", buttonarr[i]);
-    pastButton.addClass("searchbutton");
-    var cancelbutton = $("<button>");
-    cancelbutton.attr("remove", gifCount);
-    cancelbutton.addClass("removal"); 
-    cancelbutton.text("X");
-    cancelbutton.css("color", "red");
-    pastDiv.css("display", "inline");
-    pastDiv.css("margin-right", "1%")
-    pastDiv.css("margin-left", "1%")
-    pastButton.append(cancelbutton);
-    pastDiv.append(pastButton);
-    $(".buttons").append(pastDiv);
+  storedButtons = storedButtons.split(',');
+  console.log(storedButtons);
+  buttonarr = storedButtons;
+  if (buttonarr[0] == "") {
+    buttonarr.shift();
+  }
+  console.log(buttonarr);
+    for (var i = 0; i < buttonarr.length; i++) {
+      var pastDiv = $("<div>");
+      var pastButton = $("<button>")
+      pastButton.text(buttonarr[i]);
+      pastButton.attr("id", "gif-" + gifCount);
+      pastButton.attr("searchname", buttonarr[i]);
+      pastButton.addClass("searchbutton");
+      var cancelbutton = $("<button>");
+      cancelbutton.attr("remove", gifCount);
+      cancelbutton.addClass("removal"); 
+      cancelbutton.text("X");
+      cancelbutton.css("color", "red");
+      pastDiv.css("display", "inline");
+      pastDiv.css("margin-right", "1%")
+      pastDiv.css("margin-left", "1%")
+      pastButton.append(cancelbutton);
+      pastDiv.append(pastButton);
+      $(".buttons").append(pastDiv);
+      gifCount++;
   }
     $("#submit2").on("click", function() {
       buttonarr = [];
@@ -77,9 +83,10 @@ $(document).ready(function() {
     $(document).on('click', '.removal', function() {
       $(this).parent().hide();
       var xButton = $(this).attr("remove");
+      console.log(xButton);
       buttonarr.splice(xButton);
       $("#remove" + gifCount).remove();
-      JSON.stringify(buttonarr)
+      JSON.stringify(buttonarr);
       localStorage.setItem("buttons", buttonarr);
       console.log(buttonarr);
     })
