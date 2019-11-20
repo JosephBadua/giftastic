@@ -106,16 +106,9 @@ button {
 .favbody {
     border: 1px solid black;
 }
-#favoview {
-    position: absolute;
-    left: 10%;
-    font-size: 16px;
-    height: 5%;
-    width: 30%;
-}
 #favoview2 {
     position: absolute;
-    left: 50%;
+    left: 30%;
     font-size: 16px;
     height: 5%;
     width: 40%;
