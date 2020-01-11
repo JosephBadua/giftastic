@@ -1,8 +1,15 @@
-# giftastic
+# Project: Giftastic
 
-So for this assignment, I focused on the functionality first as opposed to styling. The colors I used for my divs were simply meant to visualize the spacing. I wish I had more time to stylize it the way I wanted to. As fr the functionality, it happens to be working fine. The ajax calls as well as local storage were hard to implement but it came out ok. I feel like, as there always is, a more efficient way to do it. Only thing I was uable to do was to make the favorites save for when the page refreshes.
+## Overview
+The giftastic application uses Giphy API's to pull requested images, allowing the user to view and save some gifs as favorite. User creates "buttons" which allows them to search through the buttons respective keyword, as well as specifying the amount of gifs to show from 1-10. Gifs appear to users as a still image, but can be clicked on to play. A button is generated below each gif which gives users the option to save it as a "favorite" which saves to their local storage. 
 
-I used multiple Ajax calls for the search items, the individual favorites, and the multiple favorites. I used an array for storing ID's of each gif so it can be used as the search parameter if favorited by the user. 
+## Tech
+   **GitHub** - file repository
+   **Visual Studio Code** - text editor
+   **HTML, CSS, Javascript, JQuery**
 
-Responsiveness was ok, could be better. Code was also ok, could be better condensed. 
+## APIs:
+   **Giphy** (https://developers.giphy.com/)
+  
+
 
